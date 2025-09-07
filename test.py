@@ -1,42 +1,32 @@
-#1st
-print("Hello World")
+# my_project_python.py
 
-# 1️⃣ Demander ton nom
+# Demande le nom et l'âge de l'utilisateur
 name = input("Enter your name: ")
-print(f"Hello, {name}!\n")
+age = int(input("Enter your age: "))
 
-# 2️⃣ Demander un nombre et le convertir en int
-age = input("Enter your age: ")
-age = int(age)  # convertir en entier
-print(f"Great! You are {age} years old.\n")
+# Fonction pour saluer
+def greet(person_name, person_age):
+    print(f"Hello {person_name}, you are {person_age} years old!")
 
-# 3️⃣ Demander un type de données
-data_type = input("Choose a type (int, float, str): ").lower()
-
-# 4️⃣ Créer une variable aléatoire selon le type choisi
-if data_type == "int":
-    var = int(input("Enter an integer: "))
-elif data_type == "float":
-    var = float(input("Enter a float number: "))
-else:
-    var = input("Enter a string: ")
-
-print(f"You created a variable with value: {var} and type: {type(var)}\n")
-
-# 5️⃣ Fonction simple pour multiplier un nombre
-def multiply_by_two(x):
-    return x * 2
-
-# 6️⃣ Utiliser la fonction si la variable est un nombre
-if isinstance(var, (int, float)):
-    result = multiply_by_two(var)
-    print(f"{var} multiplied by 2 is: {result}")
-else:
-    print(f"Cannot multiply '{var}' because it's not a number.\n")
-
-# 7️⃣ Petite boucle pour répéter quelque chose
+# Boucle pour répéter le salut
 for i in range(3):
-    print(f"{name}, this is loop iteration {i+1}")
+    greet(name, age)
 
-print("\n✅ Script finished. Keep experimenting!")
+# Manipulation de liste
+numbers = [1, 2, 3, 4, 5]
+squared = [x**2 for x in numbers]
+print("Numbers squared:", squared)
+
+# Condition selon l'âge
+if age >= 18:
+    print("You are an adult.")
+else:
+    print("You are a minor.")
+
+# Petit dictionnaire
+info = {"name": name, "age": age, "squared_numbers": squared}
+print("Info dictionary:", info)
+
+# Fin du script
+print("Script executed successfully!")
 
